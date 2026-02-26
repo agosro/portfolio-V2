@@ -2,7 +2,7 @@ import { Tag } from './Tag'
 
 export function ProjectCard({ title, description, tags, image, github, live }) {
   return (
-    <div className="card-glass rounded-3xl overflow-hidden flex flex-col flex-shrink-0 w-80 lg:w-[400px] group hover:-translate-y-1 transition-all duration-300">
+    <div className="card-glass rounded-3xl overflow-hidden flex flex-col flex-shrink-0 w-[calc(100vw-10vw)] md:w-80 lg:w-[400px] group hover:-translate-y-1 transition-all duration-300">
 
       {/* Imagen */}
       <div className="aspect-video bg-gradient-to-br from-sky/50 via-lilac/40 to-periwinkle/30 relative overflow-hidden">
@@ -26,13 +26,13 @@ export function ProjectCard({ title, description, tags, image, github, live }) {
       </div>
 
       {/* Body */}
-      <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-serif text-xl text-ink tracking-tight mb-2">{title}</h3>
-        <p className="text-soft text-sm font-light leading-relaxed mb-4 flex-1">{description}</p>
-        <div className="flex flex-wrap gap-1.5 mb-5">
+      <div className="p-4 sm:p-6 flex flex-col flex-1">
+        <h3 className="font-serif text-lg sm:text-xl text-ink tracking-tight mb-2">{title}</h3>
+        <p className="text-soft text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-4 flex-1">{description}</p>
+        <div className="flex flex-wrap gap-1.5 mb-4 sm:mb-5">
           {tags.map(t => <Tag key={t.label} label={t.label} variant={t.variant} />)}
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           {github && (
             <a href={github} target="_blank" rel="noopener noreferrer" className="text-steel text-xs font-medium inline-flex items-center gap-1.5 hover:text-ink transition-colors">
               GitHub

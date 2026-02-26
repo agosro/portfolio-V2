@@ -19,7 +19,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 px-[5vw] transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 px-[5vw] transition-all duration-300 overflow-visible ${
       scrolled ? 'py-3 bg-snow/80 backdrop-blur-xl shadow-md' : 'py-5 bg-transparent'
     }`}>
       <div className="max-w-[1200px] mx-auto flex items-center justify-between">
@@ -54,7 +54,7 @@ export function Navbar() {
         {/* Hamburger mobile */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden w-9 h-9 card-glass rounded-xl flex flex-col items-center justify-center gap-1.5"
+          className="md:hidden w-9 h-9 card-glass rounded-xl flex flex-col items-center justify-center gap-1.5 relative z-50"
           aria-label="Toggle menu"
         >
           <span className={`block w-4 h-px bg-ink transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[5px]' : ''}`} />
@@ -64,8 +64,9 @@ export function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-64 mt-4' : 'max-h-0'}`}>
-        <ul className="card-glass rounded-2xl p-4 flex flex-col gap-1 list-none">
+      <div className={`absolute top-full left-0 right-0 md:hidden z-40 px-[5vw] transition-all duration-300 ${menuOpen ? 'opacity-100 visible mt-2' : 'opacity-0 invisible'}`}>
+        <div className="max-w-[1200px] mx-auto">
+          <ul className="card-glass rounded-2xl p-4 flex flex-col gap-1 list-none bg-snow/95 backdrop-blur-xl">
           {links.map(l => (
             <li key={l.href}>
               <a
@@ -87,6 +88,7 @@ export function Navbar() {
             </a>
           </li>
         </ul>
+        </div>
       </div>
     </nav>
   )

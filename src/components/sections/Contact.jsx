@@ -73,28 +73,28 @@ export function Contact() {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] font-medium tracking-widest uppercase text-steel">Name</label>
-              <input name="name" placeholder="Your name" onChange={handleChange} className={inputClass} />
+              <input name="name" placeholder="Your name" onChange={handleChange} required className={inputClass} />
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] font-medium tracking-widest uppercase text-steel">Email</label>
-              <input name="email" type="email" placeholder="you@email.com" onChange={handleChange} className={inputClass} />
+              <input name="email" type="email" placeholder="you@email.com" onChange={handleChange} required className={inputClass} />
             </div>
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[10px] font-medium tracking-widest uppercase text-steel">Subject</label>
-            <input name="subject" placeholder="What's it about?" onChange={handleChange} className={inputClass} />
+            <input name="subject" placeholder="What's it about?" onChange={handleChange} required className={inputClass} />
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[10px] font-medium tracking-widest uppercase text-steel">Message</label>
-            <textarea name="message" rows={5} placeholder="Tell me about your project..." onChange={handleChange} className={`${inputClass} resize-none`} />
+            <textarea name="message" rows={5} placeholder="Tell me about your project..." onChange={handleChange} required className={`${inputClass} resize-none`} />
           </div>
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="self-start bg-ink text-snow text-sm font-medium px-8 py-3 rounded-full hover:bg-steel transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto sm:self-start bg-ink text-snow text-sm font-medium px-8 py-3 rounded-full hover:bg-steel transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {status === 'sending' ? 'Sending...' : 'Send Message →'}
           </button>

@@ -20,7 +20,7 @@ export function Hero() {
       <div className="absolute top-[40%] left-[-8%] w-52 h-52 rounded-full bg-periwinkle/40 blur-[70px] animate-[drift_12s_ease-in-out_infinite_alternate] pointer-events-none" />
 
       {/* Contenedor de contenido - alineado a la derecha */}
-      <div className="relative flex flex-col justify-center h-full min-h-screen px-[5vw] pt-28 pb-16 ml-[18%] max-w-[1200px]">
+      <div className="relative flex flex-col justify-center h-full min-h-screen px-[5vw] pt-28 pb-16 ml-0 md:ml-[18%] max-w-[1200px]">
 
       {/* Pill disponible */}
       <div className="inline-flex items-center gap-2 w-fit mb-8 px-4 py-2 rounded-full border border-periwinkle bg-periwinkle/20 animate-[fadeUp_0.6s_ease_0.1s_forwards] opacity-0">
