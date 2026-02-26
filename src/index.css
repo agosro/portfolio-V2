@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Karla:ital,wght@0,200..800;1,200..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+--color-sky: #b7d6ee;        /* un poco más profundo que #c8e4f8 */
+--color-periwinkle: #a6b8e8; /* más presencia sin perder suavidad */
+--color-lilac: #c3b6e8;      /* menos lavado */
+--color-lavender: #dcd2f2;   /* sigue pastel pero menos nieve */
+--color-steel: #3f5370;      /* un toque más oscuro */
+--color-ink: #0c1116;        /* más profundo */
+--color-soft: #4e5a6c;       /* más contraste */
+--color-snow: #fafcff;
+
+  --font-sans: "Karla", sans-serif;
+  --font-serif: "Delius", serif;
+  --font-decorative: "Sour Gummy", cursive;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-snow);
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .bg-mesh {
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 0%, rgba(200, 228, 248, 0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 20%, rgba(212, 200, 240, 0.45) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 50% 90%, rgba(184, 200, 240, 0.3) 0%, transparent 60%),
+      var(--color-snow);
+  }
+
+  .section-alt-blue {
+    background: linear-gradient(135deg, #f5f9ff 0%, #e8f0f8 100%);
+  }
+
+  .section-alt-lila {
+    background: linear-gradient(135deg, #fdfcff 0%, #faf7ff 100%);
+  }
+
+  .section-alt-peach {
+    background: linear-gradient(135deg, #fefbfd 0%, #fdf9fc 100%);
+  }
+
+  .card-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(180, 200, 240, 0.5);
+    box-shadow: 0 2px 8px rgba(30, 42, 58, 0.08);
+  }
+}
