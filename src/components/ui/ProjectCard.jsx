@@ -2,7 +2,7 @@ import { Tag } from './Tag'
 
 export function ProjectCard({ title, description, tags, image, github, live }) {
   return (
-    <div className="card-glass rounded-3xl overflow-hidden flex flex-col flex-shrink-0 w-[calc(100vw-10vw)] md:w-80 lg:w-[400px] group hover:-translate-y-1 transition-all duration-300">
+    <div className="card-glass rounded-3xl overflow-hidden flex flex-col flex-shrink-0 w-[calc(100vw-10vw)] md:w-80 lg:w-[400px] h-[480px] lg:h-[520px] group hover:-translate-y-1 transition-all duration-300">
 
       {/* Imagen */}
       <div className="aspect-video bg-gradient-to-br from-sky/50 via-lilac/40 to-periwinkle/30 relative overflow-hidden">
