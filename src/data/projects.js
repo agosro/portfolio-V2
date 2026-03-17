@@ -21,7 +21,7 @@ export const projects = [
       
     ],
     github: 'https://github.com/agosro/ecoomerce-sooni',
-    live: null,
+    live: 'https://sooni-ecommerce.netlify.app/',
   },
   {
     id: 2,
